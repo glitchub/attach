@@ -34,13 +34,13 @@ int main(int argc, char *argv[])
     if (*argv[1] == '-')             
     {
         if (argc < 4) usage();
-        user=NULL;
-        device=argv[1];
-        prog=&argv[2];
-    } else {
         user=argv[1]+1; // skip leading '-'
         device=argv[2];
         prog=&argv[3];
+    } else {
+        user=NULL;
+        device=argv[1];
+        prog=&argv[2];
     }
 
     // Become session leader
